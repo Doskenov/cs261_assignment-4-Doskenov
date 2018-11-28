@@ -23,7 +23,7 @@ struct priority_value_node
  * This is the structure that represents a priority queue.  You must define
  * this struct to contain the data needed to implement a priority queue.
  */
-struct pq;
+struct pq
 {
 	struct dynarray* da_pq;
 };
