@@ -4,10 +4,9 @@
  * you need in this file to implement a priority queue.  Make sure to add your
  * name and @oregonstate.edu email address below:
  *
- * Name:
- * Email:
+ * Name: Bakhtiyar Doskenov
+ * Email: doskenob@oregonstate.edu
  */
-
 #include <stdlib.h>
 #include "pq.h"
 #include "dynarray.h"
@@ -23,6 +22,7 @@ struct priority_value_node
  * This is the structure that represents a priority queue.  You must define
  * this struct to contain the data needed to implement a priority queue.
  */
+
 struct pq
 {
 	struct dynarray* da_pq;
@@ -34,9 +34,8 @@ struct pq
  */
 struct pq* pq_create() {
   struct pq* queue = malloc(sizeof(struct pq));
-	assert(queue);
-
-	queue->da_pq = dynarray_create();
+	   assert(queue);
+	   queue->da_pq = dynarray_create();
 
 	return queue;
 }
@@ -49,12 +48,12 @@ code to swap, compare, adjust node and last one
 static void priority_queue_swap(struct pq* pq,
 		int pos1, int pos2)
 {
-	struct priority_value_node* temp1 = NULL;
-	struct priority_value_node* temp2 = NULL;
-	temp1 = dynarray_get(pq->da_pq, pos1);
-	temp2 = dynarray_get(pq->da_pq, pos2);
-	dynarray_set(pq->da_pq, pos1, temp2);
-	dynarray_set(pq->da_pq, pos2, temp1);
+	    struct priority_value_node* temp1 = NULL;
+	    struct priority_value_node* temp2 = NULL;
+	    temp1 = dynarray_get(pq->da_pq, pos1);
+	    temp2 = dynarray_get(pq->da_pq, pos2);
+	    dynarray_set(pq->da_pq, pos1, temp2);
+	    dynarray_set(pq->da_pq, pos2, temp1);
 }
 
 static int priority_queue_compare(struct pq* pq, int pos1, int pos2)
@@ -72,10 +71,10 @@ static int priority_queue_compare(struct pq* pq, int pos1, int pos2)
 	}
 
 	return -1;
-
-
-
 }
+
+
+
 
 static void priority_queue_adjust_head(struct pq* pq)
 {
@@ -295,6 +294,5 @@ void* pq_remove_first(struct pq* pq) {
 		priority_queue_adjust_head(pq);
 		return value;
 	}
-
 	return NULL;
 }
